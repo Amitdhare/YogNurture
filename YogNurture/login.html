@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - YogNurture</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+<header>
+    <h1>YogNurture</h1>
+    <p>Welcome back! Please log in to continue</p>
+</header>
+
+<main class="login-container">
+    <!-- Important: ID same as auth.js -->
+    <form id="loginForm" class="login-form">
+        <h2>Login</h2>
+
+        <label for="loginUsername">Username</label>
+        <input type="text" id="loginUsername" name="username" placeholder="Enter your username" required>
+
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
+
+        <button type="submit">Login</button>
+
+        <p class="signup-link">
+            Don’t have an account? <a href="sign_up.html">Sign up</a>
+        </p>
+    </form>
+</main>
+
+<footer>
+    <p>© 2025 YogNurture. All Rights Reserved.</p>
+</footer>
+
+<!-- Script last me -->
+<script src="js/auth.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Solution - YogNurture</title>
+  <link rel="stylesheet" href="css/getsolution.css">
+  <!-- Auth script for login check -->
+  <script src="js/auth-check.js"></script>
+</head>
+
+
+
+
+
+
+<!-- ✅ Login check run here -->
+
+<body onload="checkLogin()">
+
+  <header class="navbar">
+    <h1>YogNurture</h1>
+    <nav>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="yoga.html">Yoga</a></li>
+        <li><a href="meditation.html">Meditation</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!-- ✅ Logout button in navbar -->
+        <li><button onclick="logout()" class="logout-btn">Logout</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="get-solution">
+    <h2>Get Health Solution</h2>
+    <form id="solutionForm">
+      <label for="healthIssue">Enter Your Health Issue:</label>
+      <input type="text" id="healthIssue" name="healthIssue" placeholder="e.g. Back Pain, Anxiety, Navel Displacement">
+      <button type="submit">Find Solution</button>
+    </form>
+    <div id="solutionResult"></div>
+  </section>
+
+
+  <!-- ✅ Progress Tracker -->
+  <div class="progress-wrapper">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+  <p id="progressText" style="text-align:center; font-weight:bold;">0% Complete</p>
+
+  <div id="solutionResult"></div>
+</section>
+
+
+  <footer class="footer">
+    <p>&copy; 2025 YogNurture. All rights reserved.</p>
+  </footer>
+
+
+  <script src="js/getsolution.js"></script>
+  <script src="js/tracker.js"></script>
+</body>
+
+</html>

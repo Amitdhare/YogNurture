@@ -1,0 +1,130 @@
+/* weight.css - styled like navel_displacement.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f7fa;
+  color: #333;
+}
+/* Header Styling */
+header {
+    background: linear-gradient(to right, #2c3e50, #4ca1af); /* smooth gradient */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+}
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  border-radius: 8px;
+}
+ h2 {
+  color: #00695c;
+  text-align: center;
+}
+
+.intro {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.yoga-section .pose {
+  margin-bottom: 24px;
+  padding: 14px;
+  background-color: #e0f2f1;
+  border-radius: 8px;
+}
+
+.yoga-section .pose h3 {
+  margin: 0 0 8px 0;
+}
+
+.yoga-section .pose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  margin: 10px 0;
+}
+
+.yoga-section .pose p {
+  margin: 8px 0;
+}
+
+.yoga-section .pose a {
+  display: inline-block;
+  margin-top: 8px;
+  text-decoration: none;
+  color: #00796b;
+  font-weight: 600;
+}
+
+.meditation-section ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.meditation-section li {
+  background-color: #fffde7;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.routine-section ol {
+  padding-left: 20px;
+}
+
+.routine-section li {
+  background-color: #e3f2fd;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+footer {
+  text-align: center;
+  padding: 18px 10px;
+  background-color: #00695c;
+  color: white;
+  margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container { padding: 14px; }
+  h1 { font-size: 1.5rem; }
+  .yoga-section .pose img { max-height: 300px; object-fit: cover; }
+}
+

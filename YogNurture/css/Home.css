@@ -1,0 +1,254 @@
+*{
+    padding: 0%;
+    margin: 0%;
+
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: #f8f8f2;
+  color: #2f4f4f;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #263238;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #96a0a1;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to bottom right, #CDE8F6, #E7D9C4);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background-color: #356859;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background-color: #2a4f44;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    display: none;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+}
+
+/* Hero Section Styles */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+              url('https://source.unsplash.com/1600x900/?yoga,meditation,health') no-repeat center center/cover;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero .cta-button {
+  background-color: #00b894;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero .cta-button:hover {
+  background-color: #019875;
+}
+
+/* Benefits Section */
+.benefits {
+  background-color: #f7f7f7;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.benefits h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.benefit-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.benefit-boxes .box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+}
+
+/* Programs Section */
+.programs {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.programs h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.program-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.program-cards .card {
+  background-color: #e0f7fa;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.program-cards .card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Schedule Section */
+.schedule {
+  background-color: #fefefe;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.schedule h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.schedule ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+}
+
+.schedule li {
+  margin: 10px 0;
+}
+
+/* Testimonials Section */
+.testimonials {
+  background-color: #e8f5e9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.testimonials blockquote {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+/* Footer */
+.footer {
+  background-color: #263238;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+}
+
+.footer p {
+  margin: 5px 0;
+  margin-left: 20px;
+}
+
+.login{
+  border: 2px solid rgb(214, 99, 17);
+  border-radius: 5px;
+  padding: 7px 10px;
+  font-weight: 500;
+  color: blue;
+}
+.sign{
+  background-color:rgb(214, 99, 17);
+  padding: 10px 10px;
+  border-radius: 5px;
+  font-weight: 500;
+  color:white;
+}
