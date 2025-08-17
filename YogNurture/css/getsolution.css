@@ -44,6 +44,7 @@ body {
 
 /* Main Form Section */
 .get-solution {
+background-color: #fff; 
   max-width: 600px;
   margin: 50px auto;
   background-color: #ffffff;
@@ -51,6 +52,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 
 .get-solution h2 {
   text-align: center;

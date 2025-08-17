@@ -46,11 +46,18 @@ body {
 }
 
 /* Hero Section */
+
+
 .hero {
-  background: linear-gradient(to bottom right, #CDE8F6, #E7D9C4);
-  padding: 5rem 2rem;
+  background: url("Css_image/hero-yoga.jpg") no-repeat center center/cover;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
+
 
 .hero h1 {
   font-size: 2.5rem;
@@ -87,43 +94,7 @@ body {
   }
 }
 
-/* Hero Section Styles */
-.hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('https://source.unsplash.com/1600x900/?yoga,meditation,health') no-repeat center center/cover;
-  color: white;
-  padding: 100px 20px;
-  text-align: center;
-}
 
-.hero h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero .cta-button {
-  background-color: #00b894;
-  color: white;
-  padding: 12px 24px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.hero .cta-button:hover {
-  background-color: #019875;
-}
 
 /* Benefits Section */
 .benefits {
