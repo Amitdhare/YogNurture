@@ -7,7 +7,7 @@ form.addEventListener("submit", function (e) {
   let solutionLink = "";
 
   if (issue.includes("navel") || issue.includes("nabhi")) {
-    solutionLink = "solution/nabhi.html";
+    solutionLink = "solution/navel_displacement";
   } else if (issue.includes("back pain")) {
     solutionLink = "solution/backpain.html";
   } else if (issue.includes("stress") || issue.includes("anxiety")) {

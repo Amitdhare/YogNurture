@@ -135,28 +135,5 @@ background-color: #fff;
 .logout-btn:hover {
     background-color: #d93838;
 }
-.progress-wrapper {
-  width: 80%;
-  height: 14px;
-  background-color: #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  margin: 20px auto;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-.progress-bar {
-  width: 0%;
-  height: 100%;
-  background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
-  background-size: 300% 100%;
-  animation: colorShift 3s infinite linear;
-  transition: width 0.8s ease-in-out;
-}
-
-@keyframes colorShift {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
-}
 
 
