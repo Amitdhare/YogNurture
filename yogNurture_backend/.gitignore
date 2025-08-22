@@ -1,0 +1,8 @@
+# .gitignore
+node_modules/
+.env
+config/
+package-lock.json
+*.log
+.vscode/
+dist/
