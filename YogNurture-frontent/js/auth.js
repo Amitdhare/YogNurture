@@ -1,6 +1,6 @@
 const signupForm = document.getElementById("signupForm");
 if (signupForm) {
-    signupForm.addEventListener("submit", function(e) {
+    signupForm.addEventListener("submit", async function(e) {
         e.preventDefault();
 
         const name = document.getElementById("name").value;
@@ -13,34 +13,55 @@ if (signupForm) {
             return;
         }
 
-        localStorage.setItem("user_" + email, password);
-        alert("Signup successful! Please login.");
-        window.location.href = "login.html";
+        try {
+            const res = await fetch("http://localhost:5000/api/auth/signup", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, email, password })
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+                alert("Signup successful! Please login.");
+                window.location.href = "login.html";
+            } else {
+                alert("❌ " + data.message);
+            }
+        } catch (err) {
+            alert("Server error: " + err.message);
+        }
     });
 }
 
-
-// Login
 const loginForm = document.getElementById("loginForm");
 if (loginForm) {
-  loginForm.addEventListener("submit", function(e) {
-    e.preventDefault();
+    loginForm.addEventListener("submit", async function(e) {
+        e.preventDefault();
 
-    // Email ko username ki jagah use karein
-    const email = document.getElementById("loginUsername").value.trim();
-    const password = document.getElementById("loginPassword").value;
+        const email = document.getElementById("loginUsername").value.trim();
+        const password = document.getElementById("loginPassword").value;
 
-    // LocalStorage se password fetch karein
-    const storedPassword = localStorage.getItem("user_" + email);
+        try {
+            const res = await fetch("http://localhost:5000/api/auth/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password })
+            });
 
-    if (storedPassword && storedPassword === password) {
-      localStorage.setItem("loggedInUser", email); // Login status store
-      alert("Login successful!");
-      window.location.href = "getsolution.html"; // Redirect after login
-    } else {
-      alert("Invalid email or password");
-    }
-  });
+            const data = await res.json();
+
+            if (res.ok) {
+                alert("✅ Login successful!");
+                localStorage.setItem("loggedInUser", email); // store session
+                window.location.href = "getsolution.html";   // redirect
+            } else {
+                alert("❌ " + data.message);
+            }
+        } catch (err) {
+            alert("Server error: " + err.message);
+        }
+    });
 }
 
 

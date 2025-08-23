@@ -1,28 +1,29 @@
-const form = document.getElementById("solutionForm");
-const result = document.getElementById("solutionResult");
-
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", async function (e) {
   e.preventDefault();
   const issue = document.getElementById("healthIssue").value.toLowerCase().trim();
-  let solutionLink = "";
 
-  if (issue.includes("navel") || issue.includes("nabhi")) {
-    solutionLink = "solution/navel_displacement";
-  } else if (issue.includes("back pain")) {
-    solutionLink = "solution/backpain.html";
-  } else if (issue.includes("stress") || issue.includes("anxiety")) {
-    solutionLink = "solution/stress.html";
-  } else if (issue.includes("weight")) {
-    solutionLink = "solution/weight.html";
-  } else {
-    result.innerHTML = `<p>Sorry, we don't have a solution yet for: <strong>${issue}</strong></p>`;
-    return;
+  try {
+    const res = await fetch("http://localhost:5000/api/form/getsolution", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ issue })
+    });
+
+    const data = await res.json();
+
+    if (data.link) {
+      result.innerHTML = `
+        <p>We found a solution for your issue:</p>
+        <a href="${data.link}" class="btn">View Solution Page</a>
+      `;
+    } else {
+      result.innerHTML = `<p>Sorry, no solution found for: <strong>${issue}</strong></p>`;
+    }
+  } catch (err) {
+    console.error(err);
+    result.innerHTML = `<p style="color:red;">⚠ Server error, try again later</p>`;
   }
-
-  result.innerHTML = `
-    <p>We found a solution for your issue:</p>
-    <a href="${solutionLink}" class="btn">View Solution Page</a>
-  `;
 });
+
 
   
