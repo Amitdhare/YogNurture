@@ -2,16 +2,21 @@ const db = require("../config/db");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-// ✅ Signup
+
+// ✅ Signup with validation
 const signup = async (req, res) => {
+  // Step 1: Check for validation errors from express-validator
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
   try {
     const { name, email, password } = req.body;
 
+    // Step 2: Additional manual checks (optional but good)
     if (!name || !email || !password) {
       return res.status(400).json({ message: "All fields are required" });
-    }
-    if (password.length < 6) {
-      return res.status(400).json({ message: "Password must be at least 6 characters" });
     }
 
     db.query("SELECT * FROM users WHERE LOWER(email) = LOWER(?)", [email], async (err, results) => {
@@ -34,19 +39,19 @@ const signup = async (req, res) => {
       );
     });
   } catch (error) {
-    console.error(error);
+    console.error("Signup error:", error);
     res.status(500).json({ message: "Server error" });
   }
 };
 
-// ✅ Login
 const login = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
   try {
     const { email, password } = req.body;
-
-    if (!email || !password) {
-      return res.status(400).json({ message: "Email and password required" });
-    }
 
     db.query("SELECT * FROM users WHERE LOWER(email) = LOWER(?)", [email], async (err, results) => {
       if (err) return res.status(500).json({ message: "Internal server error" });
@@ -75,11 +80,9 @@ const login = async (req, res) => {
       });
     });
   } catch (error) {
-    console.error(error);
+    console.error("Login error:", error);
     res.status(500).json({ message: "Server error" });
   }
 };
 
-// ✅ Correct Export (only once)
-module.exports = { signup, login };
 

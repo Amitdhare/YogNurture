@@ -10,8 +10,9 @@ const expertRoutes = require("./routes/expert.routes");
 
 const app = express();
 
-// ✅ Middlewares
-app.use(cors({ origin: "*" }));
+app.use(cors({
+  origin: "http://127.0.0.1:5500" // frontend ka URL
+}));
 app.use(express.json());
 app.use(morgan("dev"));
 
