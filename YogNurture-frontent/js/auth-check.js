@@ -1,6 +1,5 @@
 // auth.js
-
-const API_BASE = "http://localhost:5000/api"; // backend base URL
+const API_BASE = "http://localhost:3000/api/auth-check/checking";
 
 // ✅ Signup
 async function signup(name, email, password) {
@@ -12,8 +11,9 @@ async function signup(name, email, password) {
         });
 
         const data = await res.json();
+
         if (res.ok) {
-            alert("Signup successful! Please login.");
+            alert("✅ Signup successful! Please login.");
             window.location.href = "login.html";
         } else {
             alert("❌ " + data.message);
@@ -33,11 +33,11 @@ async function login(email, password) {
         });
 
         const data = await res.json();
+
         if (res.ok) {
-            // backend se JWT token ya user info le lo
             localStorage.setItem("loggedInUser", JSON.stringify(data.user));
-            localStorage.setItem("token", data.token); // future API requests
-            window.location.href = "dashboard.html"; // ya koi protected page
+            localStorage.setItem("token", data.token); // for future API requests
+            window.location.href = "dashboard.html"; // protected page
         } else {
             alert("❌ " + data.message);
         }
@@ -63,8 +63,42 @@ function logout() {
     window.location.href = "login.html";
 }
 
-// ✅ Optional: helper to get token for protected requests
+// ✅ Get token for protected requests
 function getAuthToken() {
     return localStorage.getItem("token");
 }
+
+// ✅ Setup event listeners safely
+document.addEventListener("DOMContentLoaded", () => {
+    const signupBtn = document.getElementById("signupBtn");
+    const loginBtn = document.getElementById("loginBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    if (signupBtn) {
+        signupBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            signup(name, email, password);
+        });
+    }
+
+    if (loginBtn) {
+        loginBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            login(email, password);
+        });
+    }
+
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            logout();
+        });
+    }
+});
+
 

@@ -5,3 +5,4 @@ CREATE TABLE users (
   password VARCHAR(255),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+select * from users ;
