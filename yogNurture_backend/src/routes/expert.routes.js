@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 // 🔹 Expert consultation route
-router.post("/", (req, res) => {
+router.post("/consult", (req, res) => {
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
