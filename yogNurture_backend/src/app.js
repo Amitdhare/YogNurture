@@ -28,6 +28,11 @@ app.use("/solution", express.static(path.join(__dirname, "../YogNurture-frontend
 app.use(express.json());
 app.use(morgan("dev"));
 
+// ✅ Root route
+app.get("/", (req, res) => {
+  res.send("✅ YogNurture Backend is Running...");
+});
+
 // ✅ Routes
 app.use("/api/auth", authRoutes);        // signup, login
 app.use("/api/form", solutionRoutes);
