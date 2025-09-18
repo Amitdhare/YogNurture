@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile - YogNurture</title>
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2>Complete Your Profile</h2>
+
+    <!-- Profile Form -->
+    <form id="profileForm" class="profile-form" style="display:none;">
+
+      <!-- Name -->
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+      </div>
+
+      <!-- Age -->
+      <div class="form-group">
+        <label>Age</label>
+        <input type="number" id="age" placeholder="Enter your age" required>
+      </div>
+
+      <!-- Gender -->
+      <div class="form-group">
+        <label>Gender</label>
+        <select id="gender" required>
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <!-- Weight -->
+      <div class="form-group">
+        <label>Weight (kg)</label>
+        <input type="number" id="weight" step="0.1" placeholder="Enter your weight" required>
+      </div>
+
+      <!-- Lifestyle -->
+      <div class="form-group">
+        <label>Lifestyle</label>
+        <select id="lifestyle" required>
+          <option value="">Select</option>
+          <option value="Student">Student</option>
+          <option value="Working">Working</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <!-- Medical History -->
+      <div class="form-group">
+        <label>Medical History</label>
+        <textarea id="medical_history" rows="3" placeholder="Write about any health issues..."></textarea>
+      </div>
+
+      <!-- Save Button -->
+      <button type="submit" class="btn">Save Profile</button>
+    </form>
+
+    <!-- Message if not logged in -->
+    <div id="notLoggedIn" style="display:none; color:red;">
+      <p>⚠ Please login to access your profile.</p>
+    </div>
+  </div>
+
+  <!-- ✅ JS -->
+  <script src="js/profile.js"></script>
+</body>
+
+</html>

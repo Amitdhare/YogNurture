@@ -3,11 +3,13 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 
+
 // 🔹 Routes import
 const authRoutes = require("./routes/auth.routes");
 const solutionRoutes = require("./routes/solution.routes");
 const expertRoutes = require("./routes/expert.routes");
 const checkingRoutes = require("./routes/checking.routes");
+const profileRoutes = require("./routes/profile.routes");
 
 const app = express();
 
@@ -38,7 +40,7 @@ app.use("/api/auth", authRoutes);        // signup, login
 app.use("/api/form", solutionRoutes);
 app.use("/api/expert", expertRoutes);     // expert consultation
 app.use("/api/auth-check", checkingRoutes)
-
+app.use("/api/profile", profileRoutes);
 
 
 module.exports = app;
