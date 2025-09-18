@@ -4,3 +4,5 @@ node_modules/
 *.log
 .vscode/
 dist/
+package-lock.json
+db.js

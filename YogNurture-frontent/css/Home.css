@@ -22,6 +22,7 @@ body {
   top: 0;
 }
 
+
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -57,7 +58,7 @@ body {
   align-items: center;
   text-align: center;
 }
-
+  
 
 .hero h1 {
   font-size: 2.5rem;
@@ -240,4 +241,19 @@ body {
   border-radius: 5px;
   font-weight: 500;
   color: white;
+}
+
+/* Profile Button Style */
+.nav-links .profile {
+    background-color: #4cafef;   /* light blue */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: 0.3s ease;
+    font-weight: bold;
+}
+
+.nav-links .profile:hover {
+    background-color: #2196f3;   /* darker blue */
+    color: #fff;
 }
