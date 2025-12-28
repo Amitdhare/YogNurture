@@ -1,12 +1,16 @@
 const express = require("express");
 const router = express.Router();
+const { getAIText } = require("../services/geminiService");
 
 // 🔹 Solution route
-router.post("/getsolution", (req, res) => {
+router.post("/getsolution", async (req, res) => {
   const { issue } = req.body;
 
   if (!issue) {
-    return res.status(400).json({ success: false, message: "Issue is required" });
+    return res.status(400).json({
+      success: false,
+      message: "Issue is required",
+    });
   }
 
   const text = issue.toLowerCase();
@@ -22,10 +26,25 @@ router.post("/getsolution", (req, res) => {
     link = "solution/weight.html";
 
   if (!link) {
-    return res.status(404).json({ success: false, message: "No solution found for this issue" });
+    return res.status(404).json({
+      success: false,
+      message: "No solution found for this issue",
+    });
   }
 
-  return res.json({ success: true, link });
+  // 🔹 AI enhancement (NEW)
+  let aiText = "";
+  try {
+    aiText = await getAIText(issue);
+  } catch (err) {
+    aiText = "General wellness advice will be shown on the page.";
+  }
+
+  return res.json({
+    success: true,
+    link,
+    aiText, // 👈 NEW FIELD
+  });
 });
 
 module.exports = router;
